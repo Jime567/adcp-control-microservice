@@ -17,7 +17,7 @@ A microservice for controlling Sony projectors using the ADCP protocol.
 * `/:address/power/:state` - Turn the projector on or off :new_moon:/:full_moon:
     * `/00.00.00.000/power/on`
     * `/00.00.00.000/power/off`
-* `/:address/blanked/:state` - Blank or unblank the projector
+* `/:address/blanked/:state` - Blank or unblank the projector :monkey_face:/:see_no_evil:
     * `/00.00.00.000/blanked/blank`
     * `/00.00.00.000/blanked/unblank`
 * `/:address/input/:input` - Set the input of the projector :electric_plug:
