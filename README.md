@@ -3,6 +3,8 @@ A microservice for controlling Sony projectors using the ADCP protocol.
 
 ## Endpoints
 ### Status
+* `/ping` - Check if the microservice is running
+* `/status` - Returns good if microservice is running
 * `/:address/power` - Get the on/off status of the projector
 * `/:address/blanked` - Get the blanked status of the projector
 * `/:address/input ` - Get the current input of the projector
