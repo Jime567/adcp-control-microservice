@@ -24,7 +24,7 @@ func (d *DeviceManager) RunHTTPServer(router *gin.Engine, port string) error {
 	route.GET("/:address/power", d.GetPower)
 	route.GET("/:address/blanked", d.GetBlanked)
 	route.GET("/:address/input", d.GetInput)
-	route.GET("/:address/muted", d.SetVolume)
+	route.GET("/:address/muted", d.GetMuted)
 	route.GET("/:address/volume", d.GetVolume)
 	route.GET("/:address/hardware", d.GetHardwareInfo)
 	route.GET("/:address/activesignal", d.GetActiveSignal)
