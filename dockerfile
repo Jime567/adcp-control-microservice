@@ -1,8 +1,9 @@
-FROM gcr.io/distroless/static
+FROM alpine:3.18
+
+RUN apk update && apk add bash && apk --no-cache add tzdata
 
 ARG NAME
 
+COPY ${NAME} /adcp-control
 
-COPY ${NAME} /app
-
-ENTRYPOINT ["/app"]
+ENTRYPOINT ["/adcp-control"]
