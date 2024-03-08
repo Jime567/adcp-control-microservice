@@ -1,6 +1,6 @@
 $COMMAND = $args[0]
 
-$NAME = "adcp-control-microservice"
+$NAME = "adcp-control"
 $OWNER = "byuoitav"
 $PKG = "github.com/$OWNER/$NAME"
 $DOCKER_URL = "docker.pkg.github.com"
@@ -110,7 +110,7 @@ function DockerFunc {   #can not just be docker because it creates an infinite l
         Write-Output "Building dev containers with tag $COMMIT_HASH"
 
         Write-Output "Building container $DOCKER_PKG/$NAME-amd64-dev:$COMMIT_HASH"
-        Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-amd64 -t $DOCKER_PKG/$NAME-dev:$COMMIT_HASH dist"
+        Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-amd64 -t $DOCKER_PKG/$NAME-amd64-dev:$COMMIT_HASH dist"
 
         Write-Output "Building container $DOCKER_PKG/$NAME-arm-dev:$COMMIT_HASH"
         Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-arm -t $DOCKER_PKG/$NAME-arm-dev:$COMMIT_HASH dist"
@@ -118,7 +118,7 @@ function DockerFunc {   #can not just be docker because it creates an infinite l
         Write-Output "Building dev containers with tag $TAG"
 
     	Write-Output "Building container $DOCKER_PKG/$NAME-amd64-dev:$TAG"
-        Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-amd64 -t $DOCKER_PKG/$NAME-dev:$TAG dist"
+        Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-amd64 -t $DOCKER_PKG/$NAME-amd64-dev:$TAG dist"
 
         Write-Output "Building container $DOCKER_PKG/$NAME-arm-dev:$TAG"
         Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-arm -t $DOCKER_PKG/$NAME-arm-dev:$TAG dist"
@@ -126,7 +126,7 @@ function DockerFunc {   #can not just be docker because it creates an infinite l
         Write-Output "Building prd containers with tag $TAG"
 
         Write-Output "Building container $DOCKER_PKG/$NAME-amd64-dev:$TAG"
-        Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-amd64 -t $DOCKER_PKG/${NAME}:$TAG dist"
+        Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-amd64 -t $DOCKER_PKG/${NAME}-amd64:$TAG dist"
 
     	Write-Output "Building container $DOCKER_PKG/${NAME}:$TAG"
     	Invoke-Expression "docker build -f .\DockerFile --build-arg NAME=$NAME-arm -t $DOCKER_PKG/${NAME}-arm:$TAG dist"
