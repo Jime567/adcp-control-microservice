@@ -1,5 +1,5 @@
 # adcp-control
-A microservice for controlling Sony projectors using the ADCP protocol.
+A microservice for controlling Sony projectors using the ADCP protocol. Runs on port 8012 by default.
 
 ## Endpoints
 ### Status
